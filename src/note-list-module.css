@@ -1,0 +1,40 @@
+/* *** note list *** */
+
+.note-list {
+  font-size: 1rem;
+  flex: 4;
+  /* flex-basis: 50%; */
+  border: solid 2px rebeccapurple;
+  /* padding: 1rem; */
+}
+
+.note-item-wrapper {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-item-top {
+  text-align: left;
+  padding-left: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.note-bottom-wrapper {
+  border: 1px solid grey;
+  justify-content: space-between;
+  padding-left: 1.2rem;
+  display: flex;
+}
+
+.note-item-bottom-1 {
+  padding: 0px;
+}
+
+.note-item-bottom-2 {
+  padding: 0px;
+}
+
+.note-item-descrption {
+  padding: 10px;
+}

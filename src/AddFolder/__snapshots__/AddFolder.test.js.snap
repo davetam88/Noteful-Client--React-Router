@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotefulForm component renders a form.NotefulForm by default 1`] = `
+<form
+  action="#"
+  className="Noteful-form"
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="name"
+  >
+    Folder Name: 
+  </label>
+  <input
+    aria-label="Folder name"
+    className="AddFolder_name"
+    id="name"
+    name="name"
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <br />
+  <ValidationError
+    message={true}
+  />
+  <div
+    className="Noteful-form-buttons-wrapper"
+  >
+    <button
+      disabled={true}
+      type="submit"
+    >
+      Add
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</form>
+`;
+
+exports[`NotefulForm component renders the NotefulForm given props 1`] = `
+<form
+  action="#"
+  className="Noteful-form"
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="name"
+  >
+    Folder Name: 
+  </label>
+  <input
+    aria-label="Folder name"
+    className="AddFolder_name"
+    id="name"
+    name="name"
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <br />
+  <ValidationError
+    message={true}
+  />
+  <div
+    className="Noteful-form-buttons-wrapper"
+  >
+    <button
+      disabled={true}
+      type="submit"
+    >
+      Add
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</form>
+`;

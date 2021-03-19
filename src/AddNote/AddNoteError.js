@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+
+
+class AddNoteError extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false,
+    }
+  }
+
+  
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    console.log('error :>> ', error);
+    console.log('info :>> ', info);
+  //  logComponentStackToMyService(info.componentStack);
+  }
+
+  render() {
+    // handle error and render error mesage.
+    if (this.state.hasError)
+    {
+      return (
+        <h2>There's an Error in AddNote.</h2>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+export default AddNoteError;
+

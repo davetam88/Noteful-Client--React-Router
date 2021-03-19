@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteNavList component renders a .NoteNavList by default 1`] = `
+<div
+  className="NoteNavList"
+>
+  <ul
+    className="NoteNavList__list"
+  />
+  <div
+    className="NoteNavList__button-wrapper"
+  >
+    <NavCircleButton
+      className="NoteNavList__add-folder-button"
+      tag={[Function]}
+      to="/add-folder"
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="plus"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+      <br />
+      Folder
+    </NavCircleButton>
+  </div>
+</div>
+`;
+
+exports[`NoteNavList component renders a link in ul for each folder in array 1`] = `
+<ul
+  className="NoteNavList__list"
+>
+  <li
+    key="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
+  >
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="NoteNavList__folder-link"
+      to="/folder/b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
+    >
+      Important
+      <span
+        className="NoteNavList__num-notes"
+      >
+        2
+      </span>
+    </NavLink>
+  </li>
+  <li
+    key="b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+  >
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="NoteNavList__folder-link"
+      to="/folder/b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1"
+    >
+      Super
+      <span
+        className="NoteNavList__num-notes"
+      >
+        2
+      </span>
+    </NavLink>
+  </li>
+  <li
+    key="b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+  >
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="NoteNavList__folder-link"
+      to="/folder/b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1"
+    >
+      Spangley
+      <span
+        className="NoteNavList__num-notes"
+      >
+        0
+      </span>
+    </NavLink>
+  </li>
+</ul>
+`;
