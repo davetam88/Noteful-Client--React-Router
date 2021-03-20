@@ -129,19 +129,14 @@ class App extends Component {
             <>
                 {['/', '/folder/:folderId'].map(path => (
 
-                    <Route
-                        exact
-                        key={path}
-                        path={path}
-
+                    <Route exact key={path} path={path}
                         render={routeProps => {
-                            debugger
                             const { folderId } = routeProps.match.params;
                             const notesForFolder = getNotesForFolder(
                                 notes,
-                                // currentFolder,
                                 folderId,
                             );
+
                             return (
                                 <NoteMainList
                                     {...routeProps}
@@ -153,7 +148,9 @@ class App extends Component {
                 ))}
 
                 <Route path="/note/:noteId" component={NoteMainPage} />
+
                 < Route path="/add-folder" component={AddFolder} />
+
                 < Route path="/add-note" component={AddNote} />
 
                 )

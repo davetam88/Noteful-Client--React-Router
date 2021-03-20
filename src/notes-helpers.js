@@ -12,7 +12,7 @@ export const findNote = (notes = [], noteId) => {
 
 
 export const getNotesForFolder = (notes = [], folderId) => {
-    debugger
+
     return (
         (!folderId)
             ? notes

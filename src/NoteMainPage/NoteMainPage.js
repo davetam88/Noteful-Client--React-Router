@@ -19,11 +19,10 @@ export default class NoteMainPage extends Component {
   }
 
   render() {
-
     const { notes = [] } = this.context
     const { noteId } = this.props.match.params
-    const note = findNote(notes, noteId) || { content: '' }
-
+    const xnoteId = Number(noteId);
+    const note = findNote(notes, xnoteId) || { content: '' }
 
     return (
       <section className='NoteMainPage' >
