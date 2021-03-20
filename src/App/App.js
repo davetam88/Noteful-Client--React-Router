@@ -18,6 +18,7 @@ class App extends Component {
     state = {
         folders: [],
         notes: [],
+        currentFolder: 1,
     };
 
     addNote = note => {
@@ -30,7 +31,6 @@ class App extends Component {
         this.setState({
             folders: [...this.state.folders, folder],
         })
-
     }
 
     deleteNote = NoteId => {
@@ -40,7 +40,6 @@ class App extends Component {
         this.setState({
             notes: newNotes
         })
-
     }
 
     componentDidMount() {
@@ -52,17 +51,14 @@ class App extends Component {
             }
         })
             .then(res => {
-                console.log(`res :>> `, res); // dbg..
                 if (!res.ok)
                     throw new Error(res.status)
                 return res.json()
             })
             .then(folders => {
-                this.setState({ folders });
+                this.setState({ folders, currentFolder: 1 });
             })
             .catch(error => this.setState({ error }))
-
-
 
         fetch(`${config.API_ENDPOINT}/notes`, {
             method: 'GET',
@@ -71,11 +67,9 @@ class App extends Component {
             }
         })
             .then(res => {
-                console.log(`note res :>> `, res); // dbg..
                 if (!res.ok)
                 {
                     throw new Error(res.status)
-                    console.log(`bad note res :>> `, res); // dbg..
                 }
                 return res.json()
             })
@@ -92,13 +86,9 @@ class App extends Component {
         return (
             <>
                 {['/', '/folder/:folderId'].map(path => (
-                    < Route
-                        exact
-                        key={path}
-                        path={path}
+                    < Route exact key={path} path={path}
                         render={routeProps => (
-                            <NoteNavList
-                                folders={folders}
+                            <NoteNavList folders={folders}
                                 notes={notes}
                                 {...routeProps}
                             />
@@ -112,7 +102,7 @@ class App extends Component {
                     render={routeProps => {
                         const { noteId } = routeProps.match.params;
                         const note = findNote(notes, noteId) || {};
-                        const folder = findFolder(folders, note.folderId);
+                        const folder = findFolder(folders, note.folder_id);
                         return <NoteNavPage routeNum={3} {...routeProps} folder={folder} />;
                     }}
                 />
@@ -134,20 +124,23 @@ class App extends Component {
     }
 
     renderMainRoutes() {
-        const { notes } = this.state;
+        const { notes, currentFolder } = this.state;
         return (
             <>
                 {['/', '/folder/:folderId'].map(path => (
+
                     <Route
                         exact
                         key={path}
                         path={path}
 
                         render={routeProps => {
+                            debugger
                             const { folderId } = routeProps.match.params;
                             const notesForFolder = getNotesForFolder(
                                 notes,
-                                folderId
+                                // currentFolder,
+                                folderId,
                             );
                             return (
                                 <NoteMainList

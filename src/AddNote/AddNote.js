@@ -6,7 +6,6 @@ import config from '../App/config';
 // import AddNoteError from './AddNoteError';
 import PropTypes from 'prop-types';
 
-
 class AddNote extends Component {
   static contextType = NotefulContext;
   constructor(props) {
@@ -68,6 +67,7 @@ class AddNote extends Component {
       modified: new Date(),
     };
 
+
     fetch(`${config.API_ENDPOINT}/notes`, {
       method: "POST",
       headers: {
@@ -81,7 +81,7 @@ class AddNote extends Component {
       })
       .then((note) => {
         this.context.addNote(note);
-        this.props.history.push(`/folder/${note.folderId}`);
+        this.props.history.push(`/folder/${note.folder_id}`);
       })
       .catch((error) => {
       });
