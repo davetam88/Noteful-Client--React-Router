@@ -7,11 +7,12 @@ import NoteNavPage from '../NoteNavPage/NoteNavPage';
 import NoteMainList from '../NoteMainList/NoteMainList';
 import NoteMainPage from '../NoteMainPage/NoteMainPage';
 import NotefulContext from './NotefulContext';
+import config from './config';
 import { getNotesForFolder, findNote, findFolder } from '../notes-helpers';
 import './App.css';
 import AddFolder from '../AddFolder/AddFolder';
 import AddNote from '../AddNote/AddNote';
-import config from './config';
+
 
 class App extends Component {
     state = {
@@ -117,7 +118,6 @@ class App extends Component {
                     )}
                 />
 
-
                 <Route
                     path="/add-note"
                     render={routeProps => {
@@ -161,8 +161,8 @@ class App extends Component {
                 ))}
 
                 <Route path="/note/:noteId" component={NoteMainPage} />
-                <Route path="/add-folder" component={AddFolder} />
-                <Route path="/add-note" component={AddNote} />
+                < Route path="/add-folder" component={AddFolder} />
+                < Route path="/add-note" component={AddNote} />
 
                 )
             </>
