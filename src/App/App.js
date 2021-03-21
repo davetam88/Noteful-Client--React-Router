@@ -18,7 +18,6 @@ class App extends Component {
     state = {
         folders: [],
         notes: [],
-        currentFolder: 1,
     };
 
     addNote = note => {
@@ -56,7 +55,7 @@ class App extends Component {
                 return res.json()
             })
             .then(folders => {
-                this.setState({ folders, currentFolder: 1 });
+                this.setState({ folders });
             })
             .catch(error => this.setState({ error }))
 
@@ -100,6 +99,7 @@ class App extends Component {
                 <Route
                     path="/note/:noteId"
                     render={routeProps => {
+
                         const { noteId } = routeProps.match.params;
                         const note = findNote(notes, noteId) || {};
                         const folder = findFolder(folders, note.folder_id);
@@ -118,13 +118,15 @@ class App extends Component {
                         />
                     )}
                 />
+
                 <Route path="/add-note" component={NoteNavPage} />
             </>
         );
     }
 
     renderMainRoutes() {
-        const { notes, currentFolder } = this.state;
+        const { notes } = this.state;
+
         return (
             <>
                 {['/', '/folder/:folderId'].map(path => (
@@ -148,9 +150,7 @@ class App extends Component {
                 ))}
 
                 <Route path="/note/:noteId" component={NoteMainPage} />
-
                 < Route path="/add-folder" component={AddFolder} />
-
                 < Route path="/add-note" component={AddNote} />
 
                 )

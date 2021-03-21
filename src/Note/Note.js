@@ -10,7 +10,6 @@ import './Note.css'
 
 export default class Note extends Component {
 
-
   static defaultProps = {
     onDeleteNote: () => { },
   }
@@ -40,6 +39,8 @@ export default class Note extends Component {
   }
 
   render() {
+
+
     return (
       <div className='Note'>
         <h2 className='Note__title'>
@@ -67,9 +68,7 @@ export default class Note extends Component {
             </span>
           </div>
         </div>
-
       </div>
-
     )
   }
 }

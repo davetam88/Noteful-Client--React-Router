@@ -19,6 +19,7 @@ export default class NoteMainPage extends Component {
   }
 
   render() {
+
     const { notes = [] } = this.context
     const { noteId } = this.props.match.params
     const xnoteId = Number(noteId);
@@ -26,6 +27,7 @@ export default class NoteMainPage extends Component {
 
     return (
       <section className='NoteMainPage' >
+
         <Note
           id={note.id}
           name={note.name}

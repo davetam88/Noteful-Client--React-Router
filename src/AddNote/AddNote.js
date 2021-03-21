@@ -32,24 +32,18 @@ class AddNote extends Component {
   };
 
 
-
   updateNoteNameCB(name) {
-
     this.setState({ name: { value: name, touched: true } });
   }
 
   updateContent(content) {
-
     this.setState({ content: { value: content } });
   }
 
   updateFolder(folder) {
-
     this.setState({ folder: { value: folder } }, () => {
     });
   }
-
-
 
   handleCancel = () => {
     this.props.history.push('/')
@@ -60,12 +54,14 @@ class AddNote extends Component {
     e.preventDefault();
     const { name, content, folder } = this.state;
 
+
     const addNote = {
       name: name.value,
       content: content.value,
-      folderId: folder.value,
+      folder_id: folder.value,
       modified: new Date(),
     };
+
 
 
     fetch(`${config.API_ENDPOINT}/notes`, {
@@ -149,11 +145,9 @@ class AddNote extends Component {
   }
 }
 
-
 AddNote.propTypes = {
   history: PropTypes.object
 }
-
 
 export default AddNote;
 
