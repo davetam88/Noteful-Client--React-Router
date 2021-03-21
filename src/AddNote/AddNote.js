@@ -95,7 +95,6 @@ class AddNote extends Component {
   }
 
   render() {
-
     const { folders = [] } = this.context;
     const nameError = this.validateName();
 

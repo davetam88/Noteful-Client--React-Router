@@ -3,9 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CircleButton from '../CircleButton/CircleButton'
 import './NoteNavPage.css'
 import PropTypes from 'prop-types';
+import NotefulContext from '../App/NotefulContext';
 
 
 export default function NoteNavPage(props) {
+
+  // this.context.addNote(note);
 
   return (
     < div className='NoteNavPage' >

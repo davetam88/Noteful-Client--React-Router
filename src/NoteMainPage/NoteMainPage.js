@@ -6,6 +6,7 @@ import './NoteMainPage.css'
 import PropTypes from 'prop-types';
 
 export default class NoteMainPage extends Component {
+
   static defaultProps = {
     match: {
       params: {}
