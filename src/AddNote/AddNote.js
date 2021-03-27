@@ -89,7 +89,7 @@ class AddNote extends Component {
     if (!this.state.name.touched) return true;
     if (name.length === 0 && this.state.name.touched)
     {
-      return "Folder Name Cannot be Blank, Please Try Again";
+      return "Note Name Cannot be Blank, Please Try Again";
     }
     return null;
   }

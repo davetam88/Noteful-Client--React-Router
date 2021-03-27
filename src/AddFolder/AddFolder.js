@@ -30,7 +30,6 @@ class AddFolder extends Component {
     });
   }
 
-  // update cb when typing
   handleClickCancel = () => {
     this.props.history.push('/')
   };
@@ -43,7 +42,6 @@ class AddFolder extends Component {
     const folder = {
       name,
     };
-
 
     fetch(`${config.API_ENDPOINT}/folders`, {
       method: "POST",
@@ -98,7 +96,6 @@ class AddFolder extends Component {
         <br /><br />
 
         <ValidationError message={nameError} />
-
 
         < div className="Noteful-form-buttons-wrapper">
           <button type="submit" disabled={this.validateName()}>
